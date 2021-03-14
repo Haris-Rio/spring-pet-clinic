@@ -44,6 +44,6 @@
 
 	<scm>
         <developerConnection>scm:git:https://github.com/springframeworkguru/sfg-pet-clinic.git</developerConnection>
-      <tag>y</tag>
+      <tag>HEAD</tag>
   </scm>
 </project>
