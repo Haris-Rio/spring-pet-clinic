@@ -1,5 +1,9 @@
+org\springframework\petclinicdata\services\PetService.class
+org\springframework\petclinicdata\services\OwnerService.class
 org\springframework\petclinicdata\model\Owner.class
 org\springframework\petclinicdata\model\Vet.class
 org\springframework\petclinicdata\model\Person.class
+org\springframework\petclinicdata\services\VetService.class
+org\springframework\petclinicdata\model\BaseEntity.class
 org\springframework\petclinicdata\model\Pet.class
 org\springframework\petclinicdata\model\PetType.class
