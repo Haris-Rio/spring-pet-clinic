@@ -1,12 +1,11 @@
-package org.springframework.petclinicweb.bootloader;
+package org.springframework.springpetclinic.bootloader;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.petclinicdata.model.Owner;
-import org.springframework.petclinicdata.model.Vet;
-import org.springframework.petclinicdata.services.OwnerService;
-import org.springframework.petclinicdata.services.VetService;
-import org.springframework.petclinicdata.services.map.OwnerServiceMap;
-import org.springframework.petclinicdata.services.map.VetServiceMap;
+import org.springframework.springpetclinic.model.Owner;
+import org.springframework.springpetclinic.model.Vet;
+import org.springframework.springpetclinic.services.OwnerService;
+import org.springframework.springpetclinic.services.VetService;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,11 +14,10 @@ public class DataLoader implements CommandLineRunner{
 	private final OwnerService ownerService;
 	
 	private final VetService vetService;
-	
 
-	public DataLoader() {
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 	@Override

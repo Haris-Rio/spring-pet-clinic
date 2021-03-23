@@ -1,4 +1,4 @@
-package org.springframework.petclinicdata.services.map;
+package org.springframework.springpetclinic.services.map;
 
 import java.util.HashMap;
 import java.util.HashSet;
