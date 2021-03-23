@@ -3,9 +3,9 @@ package org.springframework.petclinicdata.services.map;
 import java.util.Set;
 
 import org.springframework.petclinicdata.model.Owner;
-import org.springframework.petclinicdata.services.CrudService;
+import org.springframework.petclinicdata.services.OwnerService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long>{
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
 
 
 	@Override
@@ -32,6 +32,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 	public void deleteById(Long id) {
 		super.deleteById(id);
 		
+	}
+	
+	@Override
+	public Owner findByLastName(String lastName) {
+		return null;
 	}
 	
 	
