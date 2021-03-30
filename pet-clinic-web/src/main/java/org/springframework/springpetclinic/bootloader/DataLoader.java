@@ -1,8 +1,10 @@
 package org.springframework.springpetclinic.bootloader;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.springpetclinic.model.Owner;
+import org.springframework.springpetclinic.model.Pet;
 import org.springframework.springpetclinic.model.PetType;
 import org.springframework.springpetclinic.model.Vet;
 import org.springframework.springpetclinic.services.OwnerService;
@@ -39,11 +41,32 @@ public class DataLoader implements CommandLineRunner{
 		Owner owner1 = new Owner();
 		owner1.setFirstName("James");
 		owner1.setLastName("Camaroon");
+		owner1.setAddress("123 Vallabhai St");
+		owner1.setCity("Chennai");
+		owner1.setTelephone("7994111313");
+			
+		Pet jamesPet = new Pet();
+		jamesPet.setOwner(owner1);
+		jamesPet.setPetType(savedDogPetType);
+		jamesPet.setBirthDate(LocalDate.now());
+		jamesPet.setName("Whishkey");
+		owner1.getPets().add(jamesPet);
 		ownerService.save(owner1);
+		
 		
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Lex");
 		owner2.setLastName("Luthor");
+		owner1.setAddress("123 Rajubhai St");
+		owner1.setCity("Chennai");
+		owner1.setTelephone("7899977131");
+		
+		Pet lexPet = new Pet();
+		jamesPet.setOwner(owner2);
+		jamesPet.setPetType(savedCatPetType);
+		jamesPet.setBirthDate(LocalDate.now());
+		jamesPet.setName("Jin");
+		owner1.getPets().add(lexPet);
 		ownerService.save(owner2);
 		
 		System.out.println("Loaded owners.......");
