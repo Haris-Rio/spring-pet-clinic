@@ -3,11 +3,11 @@ package org.springframework.springpetclinic.services.map;
 import java.util.Set;
 
 import org.springframework.springpetclinic.model.Speciality;
-import org.springframework.springpetclinic.services.SpecialitiesService;
+import org.springframework.springpetclinic.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialitiesService{
+public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService{
 
 	@Override
 	public Set<Speciality> findAll() {
