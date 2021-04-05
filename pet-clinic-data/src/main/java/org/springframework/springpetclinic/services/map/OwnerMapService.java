@@ -2,14 +2,15 @@ package org.springframework.springpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.springpetclinic.model.Owner;
-import org.springframework.springpetclinic.model.Pet;
 import org.springframework.springpetclinic.services.OwnerService;
 import org.springframework.springpetclinic.services.PetService;
 import org.springframework.springpetclinic.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
 @Service
+@Profile({"default","map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService{
 
 	private final PetService petService;
@@ -50,9 +51,7 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 						throw new RuntimeException("Pet Type should not be Null");
 					}
 					if(pet.getId() == null) {
-//						Pet savedPet = 
 						petService.save(pet);
-						//pet.setId(savedPet.getId());
 					}
 				});
 			}
